@@ -8,11 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './pages/form/form.component';
+import { ListComponent } from './pages/list/list.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FormComponent, ListComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -25,6 +31,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     BrowserAnimationsModule,
     ButtonModule,
+    DropdownModule,
+    CalendarModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
   ],
   providers: [],
