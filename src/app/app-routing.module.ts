@@ -6,11 +6,12 @@ import { ListComponent } from './pages/list/list.component';
 const routes: Routes = [
   { path: 'form', component: FormComponent },
   { path: 'list', component: ListComponent },
-
+  { path: '', redirectTo: '/form', pathMatch: 'full' },
+  { path: '**', redirectTo: '/form', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
