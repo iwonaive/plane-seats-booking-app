@@ -1,23 +1,33 @@
-<p-button label="PrimeNG"></p-button>
-
-<div class="flex flex-row-reverse flex-wrap">
-  <div
-    class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2"
-  >
-    1
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" />
+    <div
+      *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+    >
+      <div *ngIf="loginForm.get('email')?.errors?.['required']">
+        Email is required.
+      </div>
+      <div *ngIf="loginForm.get('email')?.errors?.['email']">
+        Invalid email format.
+      </div>
+    </div>
   </div>
-  <div
-    class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2"
-  >
-    2
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" />
+    <div
+      *ngIf="
+        loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+      "
+    >
+      <div *ngIf="loginForm.get('password')?.errors?.['required']">
+        Password is required.
+      </div>
+    </div>
   </div>
-  <div
-    class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2"
-  >
-    3
-  </div>
-</div>
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
 
-<!-- <span>{{ "KOD_SŁOWNIKA" | translate }}</span> -->
-
-<p>{{ "welcomeMessage" | translate }}</p>
+<app-form></app-form>
+<app-list></app-list>
