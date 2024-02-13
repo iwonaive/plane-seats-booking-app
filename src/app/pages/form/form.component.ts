@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-
-interface City {
-  name: string;
-  code: string;
-}
+import { CityCode } from 'src/app/enums/city-code.enum';
+import { City } from 'src/app/interfaces/user.interface';
 
 @Component({
   selector: 'app-form',
@@ -22,20 +19,17 @@ export class FormComponent {
   });
 
   cities: City[] = [
-    { name: 'New York, USA', code: 'JFK' },
-    { name: 'Rome, Italy', code: 'FCO' },
-    { name: 'London, UK', code: 'LCY' },
-    { name: 'Warsaw, Poland', code: 'WAW' },
-    { name: 'Paris, France', code: 'PAR' },
-    { name: 'Ottawa, CAN', code: 'YOW' },
-    { name: 'Katowice, Poland', code: 'KTW' },
-    { name: 'Barcelona, Spain', code: 'BCN' },
+    { name: 'New York, USA', code: CityCode.newYork },
+    { name: 'Rome, Italy', code: CityCode.rome },
+    { name: 'London, UK', code: CityCode.london },
+    { name: 'Warsaw, Poland', code: CityCode.warsaw },
+    { name: 'Paris, France', code: CityCode.paris },
+    { name: 'Ottawa, CAN', code: CityCode.ottawa },
+    { name: 'Katowice, Poland', code: CityCode.katowice },
+    { name: 'Barcelona, Spain', code: CityCode.barcelona },
   ];
 
-  passengers: number[] = 
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  passengers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   constructor(private fb: FormBuilder) {}
-  ;
-
 }
