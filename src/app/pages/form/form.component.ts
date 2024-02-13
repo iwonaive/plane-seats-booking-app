@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 interface City {
-    name: string;
-  //   code: string;
+  name: string;
+  code: string;
 }
 
 @Component({
@@ -18,55 +18,24 @@ export class FormComponent {
     selectedCity: [''],
     departureDate: [''],
     returnDate: [''],
-    passenger: [''],
-
+    passengers: [''],
   });
-  citiesFrom: any[] | undefined;
-  citiesTo: any[] | undefined;
-    passenger: any[] | undefined;
+
+  cities: City[] = [
+    { name: 'New York, USA', code: 'JFK' },
+    { name: 'Rome, Italy', code: 'FCO' },
+    { name: 'London, UK', code: 'LCY' },
+    { name: 'Warsaw, Poland', code: 'WAW' },
+    { name: 'Paris, France', code: 'PAR' },
+    { name: 'Ottawa, CAN', code: 'YOW' },
+    { name: 'Katowice, Poland', code: 'KTW' },
+    { name: 'Barcelona, Spain', code: 'BCN' },
+  ];
+
+  passengers: number[] = 
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   constructor(private fb: FormBuilder) {}
+  ;
 
-// departureDate: Date = new Date();
-//   returnDate: Date = new Date();
-
-
-  ngOnInit() {
-    this.citiesFrom = [
-      { name: 'New York, USA' },
-      { name: 'Rome, Italy' },
-      { name: 'London, UK' },
-      { name: 'Warsaw, Poland' },
-    ];
-
-    this.citiesTo = [
-      { name: 'Paris, France' },
-      { name: 'Alaska, USA' },
-      { name: 'Katowice, Poland' },
-      { name: 'Barcelona, Spain' },
-    ];
-
-    this.passenger = [
-        { name: '1 passenger'},
-        { name: '2 passengers'},
-        { name: '3 passengers'},
-        { name: '4 passengers'},
-        { name: '5 passengers'},
-        { name: '6 passengers'},
-        { name: '7 passengers'},
-        { name: '8 passengers'},
-        { name: '9 passengers'},
-        { name: '10 passenges'},
-    ];
-   
-    }
-    }
-
-// items: SelectItem[];
-// item: string;
-
-//  constructor() {
-//         this.items = [];
-//         for (let i = 0; i < 10000; i++) {
-//             this.items.push({label: 'Item ' + i, value: 'Item ' + i});
-//         }
+}

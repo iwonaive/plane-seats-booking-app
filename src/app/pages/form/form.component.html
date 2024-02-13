@@ -1,58 +1,57 @@
-<p-card
-  styleClass="user-form"
-  class="flex aligh-items-center justify-content-center"
->
+<p-card class="flex aligh-items-center justify-content-center">
   <form [formGroup]="userForm" class="grid">
     <div class="field col-6">
-      <label for="location" class="block">Location</label>
+      <label for="location" class="block">{{ "LOCATION" | translate }}</label>
       <p-dropdown
-        [options]="citiesFrom"
+        [options]="cities"
         optionLabel="name"
         [showClear]="true"
-        placeholder="Select a City"
+        [placeholder]="'SELECT_CITY' | translate"
         formControlName="selectedCity"
       ></p-dropdown>
     </div>
 
     <div class="field col-6">
-      <label for="destination" class="block">Destination</label>
+      <label for="destination" class="block">{{
+        "DESTINATION" | translate
+      }}</label>
       <p-dropdown
-        [options]="citiesTo"
+        [options]="cities"
         optionLabel="name"
         [showClear]="true"
-        placeholder="Select a City"
+        [placeholder]= " 'SELECT_CITY' | translate "
         formControlName="selectedCity"
       ></p-dropdown>
     </div>
 
-    <div class="">
-      <label for="departureDate" class="block col-3">Departure</label>
-      <!-- inline grid justify content space around -->
+    <div>
+      <label for="departureDate" class="block col-3">{{ "DEPARTURE" | translate }}</label>
       <p-calendar
         formControlName="departureDate"
         dateFormat="D, dd/mm/yy"
         [firstDayOfWeek]="1"
         name="name"
+        [showIcon]="true"
       ></p-calendar>
     </div>
 
-    <div class="">
-      <label for="returnDate" class="block col-3">Return</label>
+    <div>
+      <label for="returnDate" class="block col-3">{{ "RETURN" | translate }}</label>
       <p-calendar
         formControlName="returnDate"
         dateFormat="D, dd/mm/yy"
         [firstDayOfWeek]="1"
         name="name"
+        [showIcon]="true"
       ></p-calendar>
     </div>
 
     <div class="field col-6">
-      <label for="passenger" class="block">Passenger</label>
+      <label for="passengers" class="block">{{ "PASSENGERS" | translate }}</label>
       <p-dropdown
-        [options]="passenger"
-        optionLabel="name"
-        placeholder="Choose number"
-        formControlName="passenger"
+        [options]="passengers"
+        [placeholder]=" 'CHOOSE_NUMBER' | translate "
+        formControlName="passengers"
       ></p-dropdown>
     </div>
 
