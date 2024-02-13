@@ -1,1 +1,67 @@
-<p>The Form Component</p>
+<p-card
+  styleClass="user-form"
+  class="flex aligh-items-center justify-content-center"
+>
+  <form [formGroup]="userForm" class="grid">
+    <div class="field col-6">
+      <label for="location" class="block">Location</label>
+      <p-dropdown
+        [options]="citiesFrom"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Select a City"
+        formControlName="selectedCity"
+      ></p-dropdown>
+    </div>
+
+    <div class="field col-6">
+      <label for="destination" class="block">Destination</label>
+      <p-dropdown
+        [options]="citiesTo"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Select a City"
+        formControlName="selectedCity"
+      ></p-dropdown>
+    </div>
+
+    <div class="">
+      <label for="departureDate" class="block col-3">Departure</label>
+      <!-- inline grid justify content space around -->
+      <p-calendar
+        formControlName="departureDate"
+        dateFormat="D, dd/mm/yy"
+        [firstDayOfWeek]="1"
+        name="name"
+      ></p-calendar>
+    </div>
+
+    <div class="">
+      <label for="returnDate" class="block col-3">Return</label>
+      <p-calendar
+        formControlName="returnDate"
+        dateFormat="D, dd/mm/yy"
+        [firstDayOfWeek]="1"
+        name="name"
+      ></p-calendar>
+    </div>
+
+    <div class="field col-6">
+      <label for="passenger" class="block">Passenger</label>
+      <p-dropdown
+        [options]="passenger"
+        optionLabel="name"
+        placeholder="Choose number"
+        formControlName="passenger"
+      ></p-dropdown>
+    </div>
+
+    <div class="field col-6">
+      <p-button
+        type="submit"
+        label="Search flights"
+        [disabled]="userForm.invalid"
+      ></p-button>
+    </div>
+  </form>
+</p-card>
