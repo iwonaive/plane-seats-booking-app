@@ -19,13 +19,13 @@
         [options]="cities"
         optionLabel="name"
         [showClear]="true"
-        [placeholder]= " 'SELECT_CITY' | translate "
+        [placeholder]="'SELECT_CITY' | translate"
         formControlName="selectedCity"
       ></p-dropdown>
     </div>
 
-    <div>
-      <label for="departureDate" class="block col-3">{{ "DEPARTURE" | translate }}</label>
+    <div class="field col-3">
+      <label for="departureDate">{{ "DEPARTURE" | translate }}</label>
       <p-calendar
         formControlName="departureDate"
         dateFormat="D, dd/mm/yy"
@@ -35,8 +35,8 @@
       ></p-calendar>
     </div>
 
-    <div>
-      <label for="returnDate" class="block col-3">{{ "RETURN" | translate }}</label>
+    <div class="field col-3">
+      <label for="returnDate">{{ "RETURN" | translate }}</label>
       <p-calendar
         formControlName="returnDate"
         dateFormat="D, dd/mm/yy"
@@ -47,10 +47,12 @@
     </div>
 
     <div class="field col-6">
-      <label for="passengers" class="block">{{ "PASSENGERS" | translate }}</label>
+      <label for="passengers" class="block">{{
+        "PASSENGERS" | translate
+      }}</label>
       <p-dropdown
         [options]="passengers"
-        [placeholder]=" 'CHOOSE_NUMBER' | translate "
+        [placeholder]="'CHOOSE_NUMBER' | translate"
         formControlName="passengers"
       ></p-dropdown>
     </div>
