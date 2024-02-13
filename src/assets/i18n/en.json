@@ -1,7 +1,9 @@
 {
-  "welcomeMessage": "Thanks for joining, {{ firstName }}! It's great to have you!",
-  "login": {
-    "username": "Enter your user name",
-    "password": "Password here"
-  }
+  "LOCATION": "Location",
+  "DESTINATION": "Destination",
+  "SELECT_CITY": "Select a city",
+  "DEPARTURE": "Departure",
+  "RETURN": "Return",
+  "PASSENGERS": "Passengers",
+  "CHOOSE_NUMBER": "Choose number"
 }

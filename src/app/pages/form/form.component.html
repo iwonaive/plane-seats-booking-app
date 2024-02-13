@@ -1,1 +1,66 @@
-<p>The Form Component</p>
+<p-card class="flex aligh-items-center justify-content-center">
+  <form [formGroup]="userForm" class="grid">
+    <div class="field col-6">
+      <label for="location" class="block">{{ "LOCATION" | translate }}</label>
+      <p-dropdown
+        [options]="cities"
+        optionLabel="name"
+        [showClear]="true"
+        [placeholder]="'SELECT_CITY' | translate"
+        formControlName="selectedCity"
+      ></p-dropdown>
+    </div>
+
+    <div class="field col-6">
+      <label for="destination" class="block">{{
+        "DESTINATION" | translate
+      }}</label>
+      <p-dropdown
+        [options]="cities"
+        optionLabel="name"
+        [showClear]="true"
+        [placeholder]="'SELECT_CITY' | translate"
+        formControlName="selectedCity"
+      ></p-dropdown>
+    </div>
+
+    <div class="field col-3">
+      <label for="departureDate">{{ "DEPARTURE" | translate }}</label>
+      <p-calendar
+        formControlName="departureDate"
+        dateFormat="D, dd/mm/yy"
+        [firstDayOfWeek]="1"
+        [showIcon]="true"
+      ></p-calendar>
+    </div>
+
+    <div class="field col-3">
+      <label for="returnDate">{{ "RETURN" | translate }}</label>
+      <p-calendar
+        formControlName="returnDate"
+        dateFormat="D, dd/mm/yy"
+        [firstDayOfWeek]="1"
+        [showIcon]="true"
+      ></p-calendar>
+    </div>
+
+    <div class="field col-6">
+      <label for="passengers" class="block">{{
+        "PASSENGERS" | translate
+      }}</label>
+      <p-dropdown
+        [options]="passengers"
+        [placeholder]="'CHOOSE_NUMBER' | translate"
+        formControlName="passengers"
+      ></p-dropdown>
+    </div>
+
+    <div class="field col-6">
+      <p-button
+        type="submit"
+        label="Search flights"
+        [disabled]="userForm.invalid"
+      ></p-button>
+    </div>
+  </form>
+</p-card>
