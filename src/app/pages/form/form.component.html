@@ -2,65 +2,40 @@
   <form [formGroup]="userForm" class="grid">
     <div class="field col-6">
       <label for="location" class="block">{{ "LOCATION" | translate }}</label>
-      <p-dropdown
-        [options]="cities"
-        optionLabel="name"
-        [showClear]="true"
-        [placeholder]="'SELECT_CITY' | translate"
-        formControlName="selectedCity"
-      ></p-dropdown>
+      <p-dropdown [autoDisplayFirst]="false" [options]="cities" optionLabel="name" [showClear]="true"
+        [placeholder]="'SELECT_CITY' | translate" formControlName="location"></p-dropdown>
     </div>
 
     <div class="field col-6">
       <label for="destination" class="block">{{
         "DESTINATION" | translate
-      }}</label>
-      <p-dropdown
-        [options]="cities"
-        optionLabel="name"
-        [showClear]="true"
-        [placeholder]="'SELECT_CITY' | translate"
-        formControlName="selectedCity"
-      ></p-dropdown>
+        }}</label>
+      <p-dropdown [autoDisplayFirst]="false" [options]="cities" optionLabel="name" [showClear]="true"
+        [placeholder]="'SELECT_CITY' | translate" formControlName="destination"></p-dropdown>
     </div>
 
     <div class="field col-3">
       <label for="departureDate">{{ "DEPARTURE" | translate }}</label>
-      <p-calendar
-        formControlName="departureDate"
-        dateFormat="D, dd/mm/yy"
-        [firstDayOfWeek]="1"
-        [showIcon]="true"
-      ></p-calendar>
+      <p-calendar formControlName="departureDate" [placeholder]="'SELECT_DATE' | translate" dateFormat="D, dd/mm/yy"
+        [firstDayOfWeek]="1" [showIcon]="true"></p-calendar>
     </div>
 
     <div class="field col-3">
       <label for="returnDate">{{ "RETURN" | translate }}</label>
-      <p-calendar
-        formControlName="returnDate"
-        dateFormat="D, dd/mm/yy"
-        [firstDayOfWeek]="1"
-        [showIcon]="true"
-      ></p-calendar>
+      <p-calendar formControlName="returnDate" [placeholder]="'SELECT_DATE' | translate" dateFormat="D, dd/mm/yy"
+        [firstDayOfWeek]="1" [showIcon]="true"></p-calendar>
     </div>
 
     <div class="field col-6">
       <label for="passengers" class="block">{{
         "PASSENGERS" | translate
-      }}</label>
-      <p-dropdown
-        [options]="passengers"
-        [placeholder]="'CHOOSE_NUMBER' | translate"
-        formControlName="passengers"
-      ></p-dropdown>
+        }}</label>
+      <p-dropdown [autoDisplayFirst]="false" [options]="passengers" [placeholder]="'CHOOSE_NUMBER' | translate"
+        formControlName="passengers"></p-dropdown>
     </div>
 
     <div class="field col-6">
-      <p-button
-        type="submit"
-        label="Search flights"
-        [disabled]="userForm.invalid"
-      ></p-button>
+      <p-button type="submit" label="Search flights" [disabled]="userForm.invalid"></p-button>
     </div>
   </form>
 </p-card>

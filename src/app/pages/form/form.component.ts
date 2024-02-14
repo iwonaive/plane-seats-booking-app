@@ -10,12 +10,11 @@ import { City } from 'src/app/interfaces/user.interface';
 })
 export class FormComponent {
   userForm = this.fb.group({
-    location: ['', Validators.required],
-    destination: [''],
-    selectedCity: [''],
-    departureDate: [''],
-    returnDate: [''],
-    passengers: [''],
+    location: [null, Validators.required],
+    destination: [null],
+    departureDate: [null],
+    returnDate: [null],
+    passengers: [null],
   });
 
   cities: City[] = [
@@ -31,5 +30,5 @@ export class FormComponent {
 
   passengers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 }
