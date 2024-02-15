@@ -1,10 +1,13 @@
 {
-  "LOCATION": "Location",
-  "DESTINATION": "Destination",
-  "SELECT_CITY": "Select a city",
-  "SELECT_DATE": "Select a date",
-  "DEPARTURE": "Departure",
-  "RETURN": "Return",
-  "PASSENGERS": "Passengers",
-  "CHOOSE_NUMBER": "Choose number"
+  "location": "Location",
+  "destination": "Destination",
+  "selectCity": "Select a city",
+  "selectDate": "Select a date",
+  "departure": "Departure",
+  "return": "Return",
+  "passengers": "Passengers",
+  "chooseNumber": "Choose number",
+  "errors": {
+    "required": "This field is required"
+  }
 }

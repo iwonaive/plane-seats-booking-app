@@ -1,41 +1,81 @@
 <p-card class="flex aligh-items-center justify-content-center">
-  <form [formGroup]="userForm" class="grid">
-    <div class="field col-6">
-      <label for="location" class="block">{{ "LOCATION" | translate }}</label>
-      <p-dropdown [autoDisplayFirst]="false" [options]="cities" optionLabel="name" [showClear]="true"
-        [placeholder]="'SELECT_CITY' | translate" formControlName="location"></p-dropdown>
-    </div>
+  <form [formGroup]="flightSearchForm" class="grid">
+    <div class="row flex w-full">
+      <div class="field col-6">
+        <label for="location" class="block">{{ "location" | translate }}</label>
+        <p-dropdown
+          [autoDisplayFirst]="false"
+          [options]="cities"
+          optionLabel="name"
+          [showClear]="true"
+          [placeholder]="'selectCity' | translate"
+          formControlName="location"
+        ></p-dropdown>
+        <app-error [control]="flightSearchForm.controls.location"></app-error>
+      </div>
 
-    <div class="field col-6">
-      <label for="destination" class="block">{{
-        "DESTINATION" | translate
+      <div class="field col-6">
+        <label for="destination" class="block">{{
+          "destination" | translate
         }}</label>
-      <p-dropdown [autoDisplayFirst]="false" [options]="cities" optionLabel="name" [showClear]="true"
-        [placeholder]="'SELECT_CITY' | translate" formControlName="destination"></p-dropdown>
+        <p-dropdown
+          [autoDisplayFirst]="false"
+          [options]="cities"
+          optionLabel="name"
+          [showClear]="true"
+          [placeholder]="'selectCity' | translate"
+          formControlName="destination"
+        ></p-dropdown>
+      </div>
     </div>
 
-    <div class="field col-3">
-      <label for="departureDate">{{ "DEPARTURE" | translate }}</label>
-      <p-calendar formControlName="departureDate" [placeholder]="'SELECT_DATE' | translate" dateFormat="D, dd/mm/yy"
-        [firstDayOfWeek]="1" [showIcon]="true"></p-calendar>
-    </div>
-
-    <div class="field col-3">
-      <label for="returnDate">{{ "RETURN" | translate }}</label>
-      <p-calendar formControlName="returnDate" [placeholder]="'SELECT_DATE' | translate" dateFormat="D, dd/mm/yy"
-        [firstDayOfWeek]="1" [showIcon]="true"></p-calendar>
-    </div>
-
-    <div class="field col-6">
-      <label for="passengers" class="block">{{
-        "PASSENGERS" | translate
+    <div class="row flex w-full">
+      <div class="field col-3">
+        <label class="block" for="departureDate">{{
+          "departure" | translate
         }}</label>
-      <p-dropdown [autoDisplayFirst]="false" [options]="passengers" [placeholder]="'CHOOSE_NUMBER' | translate"
-        formControlName="passengers"></p-dropdown>
+        <p-calendar
+          formControlName="departureDate"
+          [placeholder]="'selectDate' | translate"
+          dateFormat="D, dd/mm/yy"
+          [firstDayOfWeek]="1"
+          [showIcon]="true"
+        ></p-calendar>
+        <app-error
+          [control]="flightSearchForm.controls.departureDate"
+        ></app-error>
+      </div>
+
+      <div class="field col-3">
+        <label class="block" for="returnDate">{{ "return" | translate }}</label>
+        <p-calendar
+          formControlName="returnDate"
+          [placeholder]="'selectDate' | translate"
+          dateFormat="D, dd/mm/yy"
+          [firstDayOfWeek]="1"
+          [showIcon]="true"
+        ></p-calendar>
+      </div>
+
+      <div class="field col-6">
+        <label for="passengers" class="block">{{
+          "passengers" | translate
+        }}</label>
+        <p-dropdown
+          [autoDisplayFirst]="false"
+          [options]="passengers"
+          [placeholder]="'chooseNumber' | translate"
+          formControlName="passengers"
+        ></p-dropdown>
+      </div>
     </div>
 
-    <div class="field col-6">
-      <p-button type="submit" label="Search flights" [disabled]="userForm.invalid"></p-button>
+    <div class="col-12 justify-content-end flex">
+      <p-button
+        type="submit"
+        label="Search flights"
+        [disabled]="flightSearchForm.invalid"
+      ></p-button>
     </div>
   </form>
 </p-card>
