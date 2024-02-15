@@ -6,5 +6,6 @@
   "DEPARTURE": "Departure",
   "RETURN": "Return",
   "PASSENGERS": "Passengers",
-  "CHOOSE_NUMBER": "Choose number"
+  "CHOOSE_NUMBER": "Choose number",
+  "ERROR_TEXT": "This field is required"
 }

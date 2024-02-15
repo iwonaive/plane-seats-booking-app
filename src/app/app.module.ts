@@ -16,11 +16,12 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form.component';
 import { ListComponent } from './pages/list/list.component';
+import { ErrorComponent } from './components/error/error.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 @NgModule({
-  declarations: [AppComponent, FormComponent, ListComponent],
+  declarations: [AppComponent, FormComponent, ListComponent, ErrorComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
