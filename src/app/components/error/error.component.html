@@ -1,5 +1,5 @@
 <div class="error" *ngIf="control?.touched && control?.invalid">
   <div *ngFor="let error of errors; index as i">
-    {{ "ERROR_TEXT" | translate }}
+    {{ error | translate }}
   </div>
 </div>
