@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CityCode } from 'src/app/enums/city-code.enum';
 import { City } from 'src/app/interfaces/city.interface';
+import { FlightSearchForm } from 'src/app/interfaces/flight-search-form.interface';
 
 @Component({
   selector: 'app-form',
@@ -9,12 +10,12 @@ import { City } from 'src/app/interfaces/city.interface';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
-  flightSearchForm = this.fb.group({
-    location: [null, Validators.required],
-    destination: [null],
-    departureDate: [null, Validators.required],
-    returnDate: [null],
-    passengers: [null],
+  flightSearchForm: FormGroup<FlightSearchForm> = this.fb.group({
+    location: this.fb.control(null, [Validators.required]),
+    destination: this.fb.control(null),
+    departureDate: this.fb.control(new Date(), [Validators.required]),
+    returnDate: this.fb.control(null),
+    passengers: this.fb.control(1),
   });
 
   cities: City[] = [
@@ -29,7 +30,6 @@ export class FormComponent {
   ];
 
   passengers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-form: any;
 
   constructor(private fb: FormBuilder) {}
 }
