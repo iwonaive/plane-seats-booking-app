@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Dropdown } from 'primeng/dropdown';
 import { CityCode } from 'src/app/enums/city-code.enum';
 import { City } from 'src/app/interfaces/city.interface';
 import { FlightSearchForm } from 'src/app/interfaces/flight-search-form.interface';
@@ -30,6 +31,28 @@ export class FormComponent {
   ];
 
   passengers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  minDate = new Date();
 
   constructor(private fb: FormBuilder) {}
+
+  checkDate() {
+    if (
+      this.flightSearchForm.value.departureDate &&
+      this.flightSearchForm.value.returnDate &&
+      this.flightSearchForm.value.returnDate.getTime() <
+        this.flightSearchForm.value.departureDate.getTime()
+    ) {
+      this.flightSearchForm.controls.returnDate.setValue(null);
+    }
+  }
+  checkCity() {
+    if (
+      this.flightSearchForm.value.location.code ===
+      this.flightSearchForm.value.destination.code
+    ) {
+      this.flightSearchForm.controls['destination'].setErrors({
+        incorrectLocation: true,
+      });
+    }
+  }
 }

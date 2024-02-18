@@ -8,6 +8,7 @@
   "passengers": "Passengers",
   "chooseNumber": "Choose number",
   "errors": {
-    "required": "This field is required"
+    "required": "This field is required",
+    "incorrectLocation": "Choose different destination"
   }
 }

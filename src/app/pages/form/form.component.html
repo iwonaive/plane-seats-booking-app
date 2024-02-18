@@ -7,7 +7,7 @@
           [autoDisplayFirst]="false"
           [options]="cities"
           optionLabel="name"
-          [showClear]="true"
+          [showClear]="false"
           [placeholder]="'selectCity' | translate"
           formControlName="location"
         ></p-dropdown>
@@ -24,8 +24,9 @@
           optionLabel="name"
           [showClear]="true"
           [placeholder]="'selectCity' | translate"
-          formControlName="destination"
+          formControlName="destination" (onChange)="checkCity()"
         ></p-dropdown>
+        <app-error [control]="flightSearchForm.controls.destination"></app-error>
       </div>
     </div>
 
@@ -34,13 +35,8 @@
         <label class="block" for="departureDate">{{
           "departure" | translate
         }}</label>
-        <p-calendar
-          formControlName="departureDate"
-          [placeholder]= "'selectDate' | translate"
-          dateFormat="D, dd/mm/yy"
-          [firstDayOfWeek]="1"
-          [showIcon]="true"
-        ></p-calendar>
+        <p-calendar formControlName="departureDate" [placeholder]="'selectDate' | translate" dateFormat="D, dd/mm/yy"
+          [firstDayOfWeek]="1" [showIcon]="true" (onSelect)="checkDate()"></p-calendar>
         <app-error
           [control]="flightSearchForm.controls.departureDate"
         ></app-error>
@@ -48,13 +44,8 @@
 
       <div class="field col-3">
         <label class="block" for="returnDate">{{ "return" | translate }}</label>
-        <p-calendar
-          formControlName="returnDate"
-          [placeholder]="'selectDate' | translate"
-          dateFormat="D, dd/mm/yy"
-          [firstDayOfWeek]="1"
-          [showIcon]="true"
-        ></p-calendar>
+         <p-calendar formControlName="returnDate" [placeholder]="'selectDate' | translate" dateFormat="D, dd/mm/yy"
+          [firstDayOfWeek]="1" [showIcon]="true" [minDate]="flightSearchForm.value.departureDate"></p-calendar>
       </div>
 
       <div class="field col-6">
