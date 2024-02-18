@@ -47,8 +47,8 @@ export class FormComponent {
   }
   checkCity() {
     if (
-      this.flightSearchForm.value.location ===
-      this.flightSearchForm.value.destination
+      this.flightSearchForm.value.location.code ===
+      this.flightSearchForm.value.destination.code
     ) {
       this.flightSearchForm.controls['destination'].setErrors({
         incorrectLocation: true,
