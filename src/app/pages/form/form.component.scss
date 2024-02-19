@@ -1,0 +1,27 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+@import "../../../styles/variables.scss";
+@import "../../../styles/fonts.scss";
+
+:host ::ng-deep {
+  p-card {
+    max-width: 60rem;
+    margin: 0 auto;
+
+    .p-card {
+      background-color: $light-gray;
+    }
+  }
+}
+
+.title {
+  font-family: $font-primary;
+}
+
+.airplane__img {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
