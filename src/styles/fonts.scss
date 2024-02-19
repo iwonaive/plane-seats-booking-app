@@ -1,2 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 
-$font-primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@font-face {
+    font-family: 'Cabin', sans-serif;
+    src: local('Cabin');
+}
+
