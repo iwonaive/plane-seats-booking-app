@@ -17,20 +17,17 @@ p-calendar {
   .p-calendar {
     width: 100%;
   }
+  .p-inputtext {
+    background-color: $lightest-blue;
+  }
 }
 
 body {
   background: $peach-blue;
-  margin-top: 2rem;
+  min-height: 100vh;
+  margin: 0;
+  font-family: $font-primary;
 }
 
-.title {
-  font-family: $font-title;
-  margin: 0;
-}
-.airplane__img {
-  width: 400px;
-  display: block;
-  margin: 0 auto;
-  padding: 3rem;
-}
+
+

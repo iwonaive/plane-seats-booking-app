@@ -2,17 +2,26 @@
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
-@import '../../../styles/variables.scss';
+@import "../../../styles/variables.scss";
+@import "../../../styles/fonts.scss";
 
-p-card {
-  max-width: 60rem;
+:host ::ng-deep {
+  p-card {
+    max-width: 60rem;
+    margin: 0 auto;
+
+    .p-card {
+      background-color: #ffffff99;
+    }
+  }
+}
+
+.title {
+  font-family: $font-primary;
+}
+
+.airplane__img {
+  width: 400px;
+  display: block;
   margin: 0 auto;
-}
-
-.form {
-    padding: 0 0.5rem;
-}
-
-.block {
-  font-weight: bold;
 }

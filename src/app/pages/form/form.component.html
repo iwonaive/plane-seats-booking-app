@@ -1,13 +1,13 @@
-<h1 class="title text-center">Book Your Flight</h1>
-<img class="airplane__img" src="../../../assets/img/airplane.png" alt="airplane" />
+<h1 class="title text-center m-0 pt-3">Book Your Flight</h1>
+<img
+  class="airplane__img p-6"
+  src="../../../assets/img/airplane.png"
+  alt="airplane"
+/>
 
 <p-card class="card flex aligh-items-center justify-content-center">
-
-  <form [formGroup]="flightSearchForm" class="form grid">
-
+  <form [formGroup]="flightSearchForm" class="form grid font-bold">
     <div class="row flex w-full">
-
-
       <div class="form__location field col-6">
         <label for="location" class="block">{{ "location" | translate }}</label>
         <p-dropdown
@@ -20,7 +20,6 @@
         ></p-dropdown>
         <app-error [control]="flightSearchForm.controls.location"></app-error>
       </div>
-
 
       <div class="form__destination field col-6">
         <label for="destination" class="block">{{
@@ -41,9 +40,7 @@
       </div>
     </div>
 
-
     <div class="row flex w-full">
-
       <div class="form__departure field col-3">
         <label class="block" for="departureDate">{{
           "departure" | translate
@@ -61,7 +58,6 @@
         ></app-error>
       </div>
 
-
       <div class="form__return field col-3">
         <label class="block" for="returnDate">{{ "return" | translate }}</label>
         <p-calendar
@@ -73,7 +69,6 @@
           [minDate]="flightSearchForm.value.departureDate"
         ></p-calendar>
       </div>
-
 
       <div class="form__passengers field col-6">
         <label for="passengers" class="block">{{
@@ -88,7 +83,6 @@
       </div>
     </div>
 
-    
     <div class="form__button col-12 justify-content-end flex">
       <p-button
         type="submit"
