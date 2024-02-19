@@ -3,10 +3,13 @@
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
+@import "./styles/variables.scss";
+@import "./styles/fonts.scss";
 
 p-dropdown {
   .p-dropdown {
     width: 100%;
+    background: $lightest-blue;
   }
 }
 
@@ -14,4 +17,20 @@ p-calendar {
   .p-calendar {
     width: 100%;
   }
+}
+
+body {
+  background: $peach-blue;
+  margin-top: 2rem;
+}
+
+.title {
+  font-family: $font-title;
+  margin: 0;
+}
+.airplane__img {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+  padding: 3rem;
 }
