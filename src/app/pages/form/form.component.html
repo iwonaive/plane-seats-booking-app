@@ -85,6 +85,7 @@
 
     <div class="form__button col-12 justify-content-end flex">
       <p-button
+        (onClick)="navigateToList()"
         type="submit"
         label="Search flights"
         [disabled]="flightSearchForm.invalid"

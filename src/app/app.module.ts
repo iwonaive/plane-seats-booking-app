@@ -20,6 +20,8 @@ import { ErrorComponent } from './components/error/error.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
+
 @NgModule({
   declarations: [AppComponent, FormComponent, ListComponent, ErrorComponent],
   imports: [
