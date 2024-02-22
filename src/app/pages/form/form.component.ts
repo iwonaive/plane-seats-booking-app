@@ -59,7 +59,6 @@ export class FormComponent {
       });
     }
   }
-
   navigateToList() {
     this.router.navigateByUrl('list')
   }
