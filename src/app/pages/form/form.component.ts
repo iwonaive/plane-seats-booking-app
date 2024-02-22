@@ -4,6 +4,7 @@ import { Dropdown } from 'primeng/dropdown';
 import { CityCode } from 'src/app/enums/city-code.enum';
 import { City } from 'src/app/interfaces/city.interface';
 import { FlightSearchForm } from 'src/app/interfaces/flight-search-form.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -33,7 +34,10 @@ export class FormComponent {
   passengers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   minDate = new Date();
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   checkDate() {
     if (
@@ -54,5 +58,9 @@ export class FormComponent {
         incorrectLocation: true,
       });
     }
+  }
+
+  navigateToList() {
+    this.router.navigateByUrl('list')
   }
 }
