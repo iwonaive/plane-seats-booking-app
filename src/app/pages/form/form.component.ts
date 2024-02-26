@@ -34,10 +34,7 @@ export class FormComponent {
   passengers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   minDate = new Date();
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router
-  ) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   checkDate() {
     if (
@@ -60,6 +57,12 @@ export class FormComponent {
     }
   }
   navigateToList() {
-    this.router.navigateByUrl('list')
+    this.router.navigate(['/list'],
+      {
+        state: {
+          data: this.flightSearchForm.value,
+        },
+      });
   }
+
 }
