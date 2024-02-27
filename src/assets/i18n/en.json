@@ -10,5 +10,6 @@
   "errors": {
     "required": "This field is required",
     "incorrectLocation": "Choose different destination"
-  }
+  },
+  "bookYourFlight": "Book Your Flight"
 }

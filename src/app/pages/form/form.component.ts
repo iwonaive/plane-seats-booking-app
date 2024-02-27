@@ -51,18 +51,16 @@ export class FormComponent {
       this.flightSearchForm.value.location.code ===
       this.flightSearchForm.value.destination.code
     ) {
-      this.flightSearchForm.controls['destination'].setErrors({
-        incorrectLocation: true,
-      });
+     this.flightSearchForm.controls.destination.setErrors({
+       incorrectLocation: true,
+     });
     }
   }
   navigateToList() {
-    this.router.navigate(['/list'],
-      {
-        state: {
-          data: this.flightSearchForm.value,
-        },
-      });
+    this.router.navigate([
+      '/list',
+      { data: JSON.stringify(this.flightSearchForm.value) },
+    ]);
   }
 
 }

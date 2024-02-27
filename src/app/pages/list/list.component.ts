@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { FlightSearchValue } from 'src/app/interfaces/flight-search-value.interface';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
 })
 export class ListComponent {
-  constructor(private router: Router) {
-    const data = router.getCurrentNavigation().extras.state['data'];
+  public searchValue: FlightSearchValue;
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      if (params['data']) {
+        this.searchValue = JSON.parse(params['data']);
+        console.log(this.searchValue);
+      }
+    });
   }
 }
