@@ -14,9 +14,9 @@ import { Router } from '@angular/router';
 export class FormComponent {
   flightSearchForm: FormGroup<FlightSearchForm> = this.fb.group({
     location: this.fb.control(null, [Validators.required]),
-    destination: this.fb.control(null),
+    destination: this.fb.control(null, [Validators.required]),
     departureDate: this.fb.control(new Date(), [Validators.required]),
-    returnDate: this.fb.control(null),
+    returnDate: this.fb.control(null, [Validators.required]),
     passengers: this.fb.control(1),
   });
 
@@ -51,9 +51,9 @@ export class FormComponent {
       this.flightSearchForm.value.location.code ===
       this.flightSearchForm.value.destination.code
     ) {
-     this.flightSearchForm.controls.destination.setErrors({
-       incorrectLocation: true,
-     });
+      this.flightSearchForm.controls.destination.setErrors({
+        incorrectLocation: true,
+      });
     }
   }
   navigateToList() {
@@ -62,5 +62,4 @@ export class FormComponent {
       { data: JSON.stringify(this.flightSearchForm.value) },
     ]);
   }
-
 }

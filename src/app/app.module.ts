@@ -17,13 +17,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form.component';
 import { ListComponent } from './pages/list/list.component';
 import { ErrorComponent } from './components/error/error.component';
+import { TicketComponent } from './components/ticket/ticket.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, ListComponent, ErrorComponent],
+  declarations: [AppComponent, FormComponent, ListComponent, ErrorComponent, TicketComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -43,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

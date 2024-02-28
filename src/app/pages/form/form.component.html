@@ -68,6 +68,9 @@
           [showIcon]="true"
           [minDate]="flightSearchForm.value.departureDate"
         ></p-calendar>
+         <app-error
+          [control]="flightSearchForm.controls.returnDate"
+        ></app-error>
       </div>
 
       <div class="form__passengers field col-6">
