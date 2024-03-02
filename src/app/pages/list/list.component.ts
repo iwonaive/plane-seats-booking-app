@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FlightSearchValue } from 'src/app/interfaces/flight-search-value.interface';
+import { Ticket } from 'src/app/models/ticket.model';
 import { TicketService } from 'src/app/ticket.service';
 
 @Component({
@@ -9,11 +10,11 @@ import { TicketService } from 'src/app/ticket.service';
 })
 export class ListComponent {
   public searchValue: FlightSearchValue;
-  ticket: any;
+  tickets: Ticket[]; 
 
   constructor(private route: ActivatedRoute, ticketService: TicketService) {
     
-    this.ticket = ticketService.getTickets();}
+    this.tickets = ticketService.getTickets();}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
