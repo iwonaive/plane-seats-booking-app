@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FlightSearchValue } from 'src/app/interfaces/flight-search-value.interface';
+import { Ticket } from 'src/app/models/ticket.model';
+import { TicketService } from 'src/app/ticket.service';
 
 @Component({
   selector: 'app-list',
@@ -8,8 +10,11 @@ import { FlightSearchValue } from 'src/app/interfaces/flight-search-value.interf
 })
 export class ListComponent {
   public searchValue: FlightSearchValue;
+  tickets: Ticket[]; 
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, ticketService: TicketService) {
+    
+    this.tickets = ticketService.getTickets();}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -17,6 +22,8 @@ export class ListComponent {
         this.searchValue = JSON.parse(params['data']);
         console.log(this.searchValue);
       }
+
+      
     });
   }
 }
