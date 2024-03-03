@@ -69,6 +69,36 @@ export class TicketService {
           },
         },
       },
+      {
+        flightTo: {
+          departureDate: new Date('11.03.2024'),
+          arrivalDate: new Date('11.03.2024'),
+          price: 599,
+          airline: Airline.ryanair,
+          location: {
+            name: 'Warsaw',
+            code: CityCode.warsaw,
+          },
+          destination: {
+            name: 'Rome',
+            code: CityCode.rome,
+          },
+        },
+        flightFrom: {
+          departureDate: new Date('30.03.2024'),
+          arrivalDate: new Date('30.03.2024'),
+          price: 499,
+          airline: Airline.lot,
+          location: {
+            name: 'Rome',
+            code: CityCode.rome,
+          },
+          destination: {
+            name: 'Warsaw',
+            code: CityCode.warsaw,
+          },
+        },
+      },
     ];
   }
 }
