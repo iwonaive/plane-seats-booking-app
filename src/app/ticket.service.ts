@@ -1,67 +1,74 @@
 import { Injectable } from '@angular/core';
 import { Ticket } from '.././app/models/ticket.model';
+import { Airline } from './enums/airline.enum';
+import { CityCode } from './enums/city-code.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TicketService {
   getTickets(): Ticket[] {
-    [
+    return [
       {
         flightTo: {
-          departureDate: '03.03.2024.',
-          arrivalDate: '03.03.2024.',
+          departureDate: new Date('03.03.2024'),
+          arrivalDate: new Date('03.03.2024'),
           price: 999,
-          airline: 'Lot',
-          location: 'Warsaw',
-          destination: 'Katowice',
+          airline: Airline.lot,
+          location: {
+            name: 'Warsaw',
+            code: CityCode.warsaw,
+          },
+          destination: {
+            name: 'Katowice',
+            code: CityCode.katowice,
+          },
         },
         flightFrom: {
-          departureDate: '04.03.2024.',
-          arrivalDate: '04.03.2024.',
+          departureDate: new Date('04.03.2024'),
+          arrivalDate: new Date('04.03.2024'),
           price: 899,
-          airline: 'Lot',
-          location: 'Katowice',
-          destination: 'Warsaw',
+          airline: Airline.ryanair,
+          location: {
+            name: 'Katowice',
+            code: CityCode.katowice,
+          },
+          destination: {
+            name: 'Warsaw',
+            code: CityCode.warsaw,
+          },
         },
       },
       {
         flightTo: {
-          departureDate: '04.03.2024.',
-          arrivalDate: '04.03.2024.',
+          departureDate: new Date('04.03.2024'),
+          arrivalDate: new Date('04.03.2024'),
           price: 899,
-          airline: 'Ryanair',
-          location: 'Warsaw',
-          destination: 'Paris',
+          airline: Airline.ryanair,
+          location: {
+            name: 'Warsaw',
+            code: CityCode.warsaw,
+          },
+          destination: {
+            name: 'Paris',
+            code: CityCode.paris,
+          },
         },
         flightFrom: {
-          departureDate: '05.03.2024.',
-          arrivalDate: '05.03.2024.',
+          departureDate: new Date('23.03.2024'),
+          arrivalDate: new Date('23.03.2024'),
           price: 799,
-          airline: 'Ryanair',
-          location: 'Paris',
-          destination: 'Warsaw',
-        },
-      },
-      {
-        flightTo: {
-          departureDate: '08.03.2024.',
-          arrivalDate: '08.03.2024.',
-          price: 699,
-          airline: 'Wizz Air',
-          location: 'Rome',
-          destination: 'Warsaw',
-        },
-        flightFrom: {
-          departureDate: '09.03.2024.',
-          arrivalDate: '09.03.2024.',
-          price: 599,
-          airline: 'Wizz Air',
-          location: 'Warsaw',
-          destination: 'Rome',
+          airline: Airline.wizzair,
+          location: {
+            name: 'Paris',
+            code: CityCode.paris,
+          },
+          destination: {
+            name: 'Warsaw',
+            code: CityCode.warsaw,
+          },
         },
       },
     ];
-    return [new Ticket(), new Ticket()];
   }
 }
