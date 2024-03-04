@@ -6,7 +6,6 @@ import { ListComponent } from './pages/list/list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/form', pathMatch: 'full' },
-  // { path: '**', redirectTo: '/form', pathMatch: 'full' },
   { path: 'form', component: FormComponent },
   { path: 'list', component: ListComponent },
 ];
@@ -15,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

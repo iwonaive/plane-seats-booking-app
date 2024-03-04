@@ -1,20 +1,5 @@
 <div class="grid m-0">
-    <div class="col-6">
-        <app-ticket></app-ticket>
-    </div>
-    <div class="col-6">
-        <app-ticket></app-ticket>
-    </div>
-    <div class="col-6">
-        <app-ticket></app-ticket>
-    </div>
-    <div class="col-6">
-        <app-ticket></app-ticket>
-    </div>
-    <div class="col-6">
-        <app-ticket></app-ticket>
-    </div>
-    <div class="col-6">
-        <app-ticket></app-ticket>
+    <div *ngFor="let ticket of tickets" class="col-6">
+        <app-ticket [ticket]="ticket" [personsCount]="searchValue.passengers"></app-ticket>
     </div>
 </div>

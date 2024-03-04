@@ -2,12 +2,12 @@ import { Airline } from '../enums/airline.enum';
 import { City } from '../interfaces/city.interface';
 
 export class Flight {
-  departureDate: Date;
-  arrivalDate: Date;
-  price: number;
-  airline: Airline;
-  location: City;
-  destination: City;
-
-  constructor() {}
+  constructor(
+    public date: Date,
+    public time: number,
+    public price: number,
+    public airline: Airline,
+    public location: City,
+    public destination: City
+  ) { }
 }
