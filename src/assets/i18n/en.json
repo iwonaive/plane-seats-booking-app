@@ -11,5 +11,7 @@
     "required": "This field is required",
     "incorrectLocation": "Choose different destination"
   },
-  "bookYourFlight": "Book Your Flight"
+  "bookYourFlight": "Book Your Flight",
+  "perPerson": "per person",
+  "perAll": "per all"
 }

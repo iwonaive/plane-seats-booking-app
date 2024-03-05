@@ -12,31 +12,37 @@ export class TicketService {
   private readonly MAX_TIME_PER_FLIGHT = 16;
   private readonly MAX_PRICE_PER_FLIGHT = 2000;
 
-  getTickets(location: City, departureDate: Date, destination: City, arrivalDate: Date): Ticket[] {
+  getTickets(
+    location: City,
+    departureDate: Date,
+    destination: City,
+    arrivalDate: Date
+  ): Ticket[] {
     const tickets: Ticket[] = [];
-    const ticketsCount = this.getRandomInt(this.MAX_TICKETS_PER_SEARCH);
+    const ticketsCount = this.getRandomIntByMinMax(
+      this.MAX_TICKETS_PER_SEARCH,
+      1
+    );
 
     for (let index = 0; index < ticketsCount; index++) {
-      tickets.push(
-        {
-          flightTo: new Flight(
-            departureDate,
-            this.getRandomInt(this.MAX_TIME_PER_FLIGHT),
-            this.getRandomInt(this.MAX_PRICE_PER_FLIGHT),
-            this.getRandomAirline(),
-            location,
-            destination,
-          ),
-          flightFrom: new Flight(
-            arrivalDate,
-            this.getRandomInt(this.MAX_TIME_PER_FLIGHT),
-            this.getRandomInt(this.MAX_PRICE_PER_FLIGHT),
-            this.getRandomAirline(),
-            destination,
-            location
-          )
-        }
-      )
+      tickets.push({
+        flightFrom: new Flight(
+          arrivalDate,
+          this.getRandomIntByMinMax(this.MAX_TIME_PER_FLIGHT, 1),
+          this.getRandomIntByMinMax(this.MAX_PRICE_PER_FLIGHT, 1),
+          this.getRandomAirline(),
+          location,
+          destination
+        ),
+        flightTo: new Flight(
+          departureDate,
+          this.getRandomIntByMinMax(this.MAX_TIME_PER_FLIGHT, 1),
+          this.getRandomIntByMinMax(this.MAX_PRICE_PER_FLIGHT, 1),
+          this.getRandomAirline(),
+          destination,
+          location
+        ),
+      });
     }
 
     return tickets;
@@ -44,10 +50,16 @@ export class TicketService {
 
   private getRandomAirline() {
     const values = Object.values(Airline);
-    return values[this.getRandomInt(values.length)];
+    return values[this.getRandomIntByMax(values.length)];
   }
 
-  private getRandomInt(max: number) {
+  private getRandomIntByMinMax(max: number, min: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  private getRandomIntByMax(max: number) {
     return Math.floor(Math.random() * max);
   }
 }
