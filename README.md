@@ -1,5 +1,7 @@
 # PlaneSeatsBookingApp
 
+You can see this project here: https://stackblitz.com/~/github.com/iwonaive/plane-seats-booking-app
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
 ## Development server
