@@ -1,36 +1,12 @@
 <p-card>
   <div class="grid">
     <div class="col-10">
-      <div class="row flex align-items-center gap-7">
-        <img
-          class="ticket__icon w-4rem"
-          src="../../../assets/img/airplane-thumbnail.jpg"
-          alt="small airplane"
-        />
-        <div class="flex flex-wrap">
-          <!-- <span class="w-full font-bold">17:15 - 18:25</span> -->
-          <span class="w-100"
-            >{{ ticket.flightFrom.location.name }} -
-            {{ ticket.flightFrom.destination.name }}</span
-          >
-        </div>
-        <span class="font-bold pr-4">{{ ticket.flightFrom.time }} h</span>
-      </div>
-      <div class="row flex align-items-center gap-7">
-        <img
-          class="ticket__icon w-4rem"
-          src="../../../assets/img/airplane-thumbnail.jpg"
-          alt="small airplane"
-        />
-        <div class="flex flex-wrap">
-          <!-- <span class="w-full font-bold">17:15 - 18:25</span> -->
-          <span class="w-100"
-            >{{ ticket.flightTo.location.name }} -
-            {{ ticket.flightTo.destination.name }}</span
-          >
-        </div>
-        <span class="font-bold pr-4">{{ ticket.flightTo.time }} h</span>
-      </div>
+      <ng-container
+        *ngTemplateOutlet="flightInfo; context: { flight: ticket.flightFrom }"
+      ></ng-container>
+      <ng-container
+        *ngTemplateOutlet="flightInfo; context: { flight: ticket.flightTo }"
+      ></ng-container>
       <footer class="mt-4">
         {{ ticket.flightFrom.airline }} | {{ ticket.flightTo.airline }}
       </footer>
@@ -50,3 +26,20 @@
     </div>
   </div>
 </p-card>
+
+<ng-template #flightInfo let-flight="flight">
+  <div class="row flex align-items-center gap-7">
+    <img
+      class="ticket__icon w-4rem"
+      src="../../../assets/img/airplane-thumbnail.jpg"
+      alt="small airplane"
+    />
+    <div class="flex flex-wrap">
+      <!-- <span class="w-full font-bold">17:15 - 18:25</span> -->
+      <span class="w-100"
+        >{{ flight.location.name }} - {{ flight.destination.name }}</span
+      >
+    </div>
+    <span class="font-bold pr-4">{{ flight.time }} h</span>
+  </div>
+</ng-template>
