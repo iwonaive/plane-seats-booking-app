@@ -4,6 +4,8 @@ You can see this project here: https://stackblitz.com/~/github.com/iwonaive/plan
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
+Mobile version is not finished - coming soon!
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
