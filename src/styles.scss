@@ -29,5 +29,9 @@ body {
   font-family: $font-primary;
 }
 
-
+@media (max-width: 576px) { 
+  body {
+    min-height: 120vh;
+  }
+}
 

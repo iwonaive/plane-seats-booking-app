@@ -27,36 +27,19 @@
 }
 
 @media (max-width: 576px) {
-  
+
   :host ::ng-deep {
   p-card {
     display: block;
-    // padding: 0 10rem; 
     width: 400px; 
-    // max-width: 30rem;
-    // margin: 0 auto;
-    
-
-    .p-card {
-      background-color: red;
-    }
   }
 }
   
-  
-  
   .title {
     font-size: 1.5rem;
+    width: 400px; 
   }
-  // p-card {
-  //   max-width: 100vw; 
-  //   padding: 0 48px;
-  //   display: block;
-
-  // }
-  //  .card {
-  //   background-color: red;
-  // }
+  
 
   
 }
