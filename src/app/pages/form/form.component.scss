@@ -25,3 +25,25 @@
   display: block;
   margin: 0 auto;
 }
+
+@media (max-width: 576px) {
+
+  :host ::ng-deep {
+  p-card {
+    display: block;
+    width: 400px; 
+  }
+}
+  
+  .title {
+    font-size: 1.5rem;
+    width: 400px; 
+  }
+  
+  // .field {
+  //   width: 100%; 
+  // }
+  // Jak ułożyć wszystko w kolumnach - jeden element pod drugim?
+
+  
+}

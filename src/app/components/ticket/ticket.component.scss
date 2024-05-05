@@ -3,3 +3,19 @@
 .price {
   border-left: 1px solid v.$dark-gray;
 }
+
+@media (max-width: 576px) { 
+
+  
+
+  .ticket__icon, h4 {
+    display: none;
+  }
+  h3 { 
+    font-size: 0.75rem;
+    font-weight: normal;
+  }
+.cities {
+  font-size: 0.8rem;
+}
+}
